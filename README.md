@@ -43,3 +43,8 @@ List versioned releases.
 ## Collaborators
 
 List collaborators here.
+
+## Wireframe
+
+[Input Screen](/img/wireframeInput.png)
+[Result Screen](/img/wireframeResult.png)
