@@ -44,7 +44,21 @@ List versioned releases.
 
 List collaborators here.
 
+
+## User Stories 
+
+As an adventurous traveler, I want to be surprised by a random campsite suggestion, so I can experience the thrill of discovering new and unique camping locations I wouldn't have found otherwise.
+
+As a spontaneous camper, I want to see random campsites with available booking options for tonight or the upcoming weekend, so I can make last-minute camping plans and enjoy the spontaneity of the outdoors.
+
+As a camper seeking variety, I want the website to generate random campsites in different geographic regions and environments, so I can diversify my camping experiences by exploring various landscapes and ecosystems.
+
+As a group camper, I want the option to specify the number of campsites I need for my party, and have the website generate random campsites that can accommodate us, so I can plan group camping trips with ease.
+
+As a budget-conscious camper, I want the website to offer random campsites that are affordable and include cost-saving tips, so I can enjoy spontaneous camping trips without breaking the bank.
+
 ## Wireframe
 
 [Input Screen](/img/wireframeInput.png)
 [Result Screen](/img/wireframeResult.png)
+
