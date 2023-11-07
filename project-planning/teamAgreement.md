@@ -10,13 +10,13 @@ Emma - JavaScript (vanilla)
 
 Ava - CSS and Styling, Bootstrap
 
-Luke - General Troubleshooting, JavaScript
+Luke - JavaScript, General Troubleshooting
 
 **How can you best utilize these strengths in the execution of your project?**
 
 Assign action items to these strength areas when possible.
 
-Emma can do a lot of the drafting of the logic, with Luke reviewing and troubleshooting. Ava can do the majority of the styling and bootstrap things.
+Emma and Luke can do a lot of the drafting and inital JavaScript. Ava can do the majority of the styling and bootstrap things.
 
 **In which professional competencies do you each want to develop greater strength?**
 
