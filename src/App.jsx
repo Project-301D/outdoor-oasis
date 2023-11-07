@@ -5,6 +5,7 @@ import NavLayout from "./components/NavLayout";
 import Login from "./components/Login";
 import Logout from "./components/Logout";
 import Profile from "./components/Profile";
+// import axios from 'axios';
 import SearchedContent from "./pages/SearchedContent";
 import './index.css';
 
