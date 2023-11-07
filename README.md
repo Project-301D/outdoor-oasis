@@ -1,6 +1,6 @@
 # PROJECT NAME
 
-Project description goes here.
+An application to allow users to find a national park.
 
 ## Getting Started
 
@@ -30,20 +30,28 @@ Any environment configuration steps.
 
 ## Architecture
 
-Describe how the project is structured.
+React, Node.js, MongoDB
 
 ### Languages & tools
 
-Explain what tools are used.
+JavaScript
+React
+Bootstrap
+Node.js
+MongoDB
+Express
+GitHub
+VS Code
+National Parks Service API
 
 ## Change Log
 
-List versioned releases.
+Version 0.0
 
 ## Collaborators
 
-List collaborators here.
-
+Made by Emma Johnson-Barth, Luke McCarthy, and Ava Melchior.
+Help from Craig Barkley and Daniel Frey
 
 ## User Stories 
 
@@ -62,3 +70,16 @@ As a budget-conscious camper, I want the website to offer random campsites that 
 [Input Screen](/img/wireframeInput.png)
 [Result Screen](/img/wireframeResult.png)
 
+## Domain Model
+
+[Whiteboard](/img/domainModel.jpg)
+
+## Database Schema
+
+ lat: {type: Number, required: true},
+ lon: {type: Number, required: true},
+ degF: {type: Number, required: true},
+ parkName: {type: String, required: true},
+ stateName: {type: String, required: true},
+ cityName: {type: String, required: true},
+ images: {type: Array, required: true}
