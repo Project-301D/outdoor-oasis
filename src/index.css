@@ -1,17 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
 
 :root {
-  --primary: rgb(23, 98, 248);
-  --secondary: #10e510;
+  --primary:#9b9b84;
+  --secondary: #e1d0bc;
 }
 body {
   margin: 0;
   padding: 20px;
-  font-family: "Poppins";
+  font-family: "Josefin Sans";
   background: var(--secondary);
 }
 * {
-  color: #fff;
+  color: #4e533e;
   /* margin: 0; */
 }
 p {
@@ -21,9 +21,11 @@ button {
   border: 0;
   padding: 8px;
   border-radius: 4px;
-  color: white;
+  color: #4e533e;
   background: var(--primary);
   cursor: pointer;
+  background-color: #e1d0bc;
+  font-family: "Josefin Sans";
 }
 
 header {
@@ -57,6 +59,7 @@ main {
   background: var(--primary);
   max-width: 1200px;
   margin: 0 auto;
+  padding: 20px;
 }
 
 
