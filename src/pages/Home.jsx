@@ -2,7 +2,7 @@ import React from "react";
 import Footer from "./Footer";
 import axios from "axios";
 import { Form, Button } from 'react-bootstrap';
-// import Camp from '../components/Camp';
+import Camp from '../components/Camp';
 // import { Container, Carousel } from "react-bootstrap"
 
 let VITE_APP_SERVER = import.meta.env.VITE_APP_SERVER;
@@ -109,6 +109,8 @@ class Home extends React.Component {
           />
           <Button type="submit" className="btn btn-primary">Search!</Button>
         </Form>
+        {this.state.camp && <Camp camp={this.state.camp} />}
+        {this.state.error && <p>{this.state.error}</p>}
 
         {/* <Container>
           {this.state.showImages} &&
