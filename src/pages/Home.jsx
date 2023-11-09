@@ -1,9 +1,10 @@
 import React from "react";
+//import Component?
 import Footer from "./Footer";
 import axios from "axios";
 import { Form, Button } from 'react-bootstrap';
 // import Camp from '../components/Camp';
-// import { Container, Carousel } from "react-bootstrap"
+import { Container, Carousel } from "react-bootstrap"
 
 let VITE_APP_SERVER = import.meta.env.VITE_APP_SERVER;
 
@@ -13,12 +14,17 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
-      description: '',
-      parkCode: '',
-      camp: '',
-      showCamp: false,
+      latitude: '',
+      longitude: '',
+      fullName: '',
+      images: '',
+      imageUrlArray: [],
+      imageCreditArray: '',
+      imageTitleArray: '',
+      imageAltTextArray: '',
+      imageCaptionArray: '',
       campName: '',
+      showCamp: false,
       error: null,
     };
   }
@@ -30,21 +36,24 @@ class Home extends React.Component {
     });
   };
 
-  displayCamp = async (parkCode, description, name) => {
-    try {
-      const response = await axios.get(`${VITE_APP_SERVER}/campground`, {
-        params: { parkCode: parkCode, description: description, name: name }
-      });
-      const campData = response.data;
-      this.setState({
-        camp: campData,
-        showCamp: true,
-      });
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
+  // displayCamp = async (parkCode, description, name) => {
+  //   try {
+  //     const response = await axios.get(`${VITE_APP_SERVER}/campground`, {
+  //       params: { parkCode: parkCode, description: description, name: name }
+  //     });
+  //     console.log('response from front end: ', response);
+  //     const campData = response.data;
+  //     this.setState({
+  //       latitude: campData[0].latitude,
+  //       longitude: campData[0].longitude,
+  //       fullName: campData[0].fullName,
+  //       images: campData[0].images,
+  //       showCamp: true,
+  //     });
+  //   } catch (error) {
+  //     console.error(error);
+  //   }
+  // };;
 
   handleSubmit = async (event) => {
     event.preventDefault();
@@ -52,11 +61,22 @@ class Home extends React.Component {
       const response = await axios.get(`${VITE_APP_SERVER}/campground`, {
         params: { name: this.state.campName }
       });
+      // console.log('response.data[0].images: ', response.data[0].images)
+      // console.log('imgUrlArray: ', imageUrlArray);
       this.setState({
-        camp: response.data,
+        latitude: response.data[0].latitude,
+        longitude: response.data[0].longitude,
+        fullName: response.data[0].fullName,
+        imageUrlArray: response.data[0].images.map(ele => ele['url']),
+        imageCreditArray: response.data[0].images.map(ele => ele['credit']),
+        imageTitleArray: response.data[0].images.map(ele => ele['title']),
+        imageAltTextArray: response.data[0].images.map(ele => ele['altText']),
+        imageCaptionArray: response.data[0].images.map(ele => ele['caption']),
+        // images: response.data[0].images,
         error: null,
-      },
-      console.log(response.data));
+      })
+      // console.log('response.data: ', response.data));
+      // console.log('imageUrlArray: ', this.state.imageUrlArray);
     } catch (error) {
       console.error(error);
       this.setState({
@@ -68,31 +88,7 @@ class Home extends React.Component {
 
 
 
-
-
-
-
   render() {
-
-    // console.log(this.state.weather);
-    // let carouselItems = this.state.photoData.map((picture, index) => (
-    //   <Carousel.Item key={index}>
-    //     <img className="d-block w-100" src={picture.src} alt={picture.alt} />
-    //     <Carousel.Caption>
-    //       <h3
-    //         style={{
-    //           backgroundColor: "teal",
-    //           borderRadius: "5px",
-    //           width: "max-content",
-    //           margin: "auto",
-    //           padding: "5px",
-    //         }}
-    //       >
-    //         Photo by: {picture.artist}
-    //       </h3>
-    //     </Carousel.Caption>
-    //   </Carousel.Item>
-    // ));
 
     return (
       <>
@@ -109,18 +105,28 @@ class Home extends React.Component {
           />
           <Button type="submit" className="btn btn-primary">Search!</Button>
         </Form>
+        <div>
+          <p>{this.state.fullName}</p>
+          <p>{this.state.latitude}</p>
+          <p>{this.state.longitude}</p>
 
-        {/* <Container>
-          {this.state.showImages} &&
-
-          (<Container>
-            <Carousel> */}
-        {/* {carouselItems} */}
-        {/* </Carousel>
-          </Container>) */}
-        {/* </Container> */}
-
+          <Container fluid>
+            <Carousel fade>
+              {this.state.imageUrlArray.map((imageUrl, index = 0) => (
+                <Carousel.Item key={index}>
+                  <img
+                    src={imageUrl}
+                    // className="d-block w-100"
+                  width={1200}
+                  // height={500}
+                  />
+                </Carousel.Item>
+              ))}
+            </Carousel>
+          </Container>
+        </div>
         <Footer />
+
       </>
     );
   }
