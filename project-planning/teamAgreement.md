@@ -99,7 +99,7 @@ Trello
 
 ## Presentation Deck
 
-[Link to Presentation](https://docs.google.com/presentation/d/1hiQarY_qRmxl_mnmdoHL3REf1xxlrs6hCzz_a9iC1Mw/edit#slide=id.g2accd1c413_3_31)
+[Link to Presentation](https://docs.google.com/presentation/d/1F4t8p--V-2HAocFMQoRmmIudHanOXn8VgXkrzzyqFcI/edit?usp=sharing)
 
 ## Git Process
 
