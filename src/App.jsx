@@ -5,7 +5,6 @@ import NavLayout from "./components/NavLayout";
 import Login from "./components/Login";
 import Logout from "./components/Logout";
 import Profile from "./components/Profile";
-// import axios from 'axios';
 import SearchedContent from "./pages/SearchedContent";
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -17,7 +16,6 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
-//set up the browser router
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<NavLayout />}  >

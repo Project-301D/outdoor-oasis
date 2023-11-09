@@ -1,12 +1,8 @@
 import React from "react";
-//import Component?
 import Footer from "./Footer";
 import axios from "axios";
 import { Form, Button } from 'react-bootstrap';
-// import Camp from '../components/Camp';
 import { Container, Carousel } from "react-bootstrap"
-// import { CarouselComponent } from "@syncfusion/ej2-react-navigations";
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 let VITE_APP_SERVER = import.meta.env.VITE_APP_SERVER;
@@ -40,25 +36,6 @@ class Home extends React.Component {
       campName: event.target.value,
     });
   };
-
-  // displayCamp = async (parkCode, description, name) => {
-  //   try {
-  //     const response = await axios.get(`${VITE_APP_SERVER}/campground`, {
-  //       params: { parkCode: parkCode, description: description, name: name }
-  //     });
-  //     console.log('response from front end: ', response);
-  //     const campData = response.data;
-  //     this.setState({
-  //       latitude: campData[0].latitude,
-  //       longitude: campData[0].longitude,
-  //       fullName: campData[0].fullName,
-  //       images: campData[0].images,
-  //       showCamp: true,
-  //     });
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };;
 
   handleSubmit = async (event) => {
     event.preventDefault();
@@ -120,14 +97,12 @@ class Home extends React.Component {
               <p>Email: {this.state.email}</p>
               <Container fluid>
                 <Carousel indicators={false}>
-                  {/* <CarouselComponent showIndicators={false}> */}
                     {this.state.images.map((obj, index) => (
                       <Carousel.Item key={index}>
                         <img
                           src={obj.url}
                           alt={obj.altText}
                           // className="d-block w-100"
-                          // width={1200}
                           height={500}
                         />
                         <p></p>
@@ -136,7 +111,6 @@ class Home extends React.Component {
                         <p>{obj.title}, by {obj.credit}</p>
                       </Carousel.Item>
                     ))}
-                  {/* </CarouselComponent> */}
                 </Carousel>
               </Container>
             </>
