@@ -3,8 +3,8 @@ import React from "react";
 import Footer from "./Footer";
 import axios from "axios";
 import { Form, Button } from 'react-bootstrap';
-import Camp from '../components/Camp';
-// import { Container, Carousel } from "react-bootstrap"
+// import Camp from '../components/Camp';
+import { Container, Carousel } from "react-bootstrap"
 
 let VITE_APP_SERVER = import.meta.env.VITE_APP_SERVER;
 
