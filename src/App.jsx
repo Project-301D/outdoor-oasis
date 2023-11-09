@@ -8,6 +8,7 @@ import Profile from "./components/Profile";
 // import axios from 'axios';
 import SearchedContent from "./pages/SearchedContent";
 import './index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import {
   createBrowserRouter,
