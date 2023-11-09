@@ -29,6 +29,7 @@ body::before {
 }
 p {
   margin: 0 auto;
+  margin-top: 10px;
 }
 button {
   border: 0;
@@ -66,7 +67,7 @@ header nav a {
 }
 header nav a.active {
   background: var(--secondary);
-  height: 12px;
+  height: 30px;
 }
 
 /* page content */
@@ -95,3 +96,8 @@ main section {
 .profile-margin {
   margin-top: 20px;
 }
+
+a {
+  color: #4e533e;
+}
+
