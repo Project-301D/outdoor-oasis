@@ -66,7 +66,7 @@ class Home extends React.Component {
 
 
   render() {
-    const campsiteNames = ["Yellowstone", "Smoky Mountain", "Grand Teton", "Grand Canyon"];
+    const campsiteNames = ["Yellowstone", "Smoky Mountain", "Grand Teton", "Mount Rainier", "Saguaro"];
     return (
       <>
         <div>
@@ -105,8 +105,8 @@ class Home extends React.Component {
                         src={obj.url}
                         alt={obj.altText}
                         // className="d-block w-100"
-                        width={1000}
-                      // height={500}
+                        // width={1000}
+                      height={500}
                       />
                       <p></p>
                       <p></p>
