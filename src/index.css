@@ -15,7 +15,7 @@ body {
   /* margin: 0; */
 }
 p {
-  margin: 20px 0;
+  margin: 0 auto;
 }
 button {
   border: 0;
@@ -26,6 +26,7 @@ button {
   cursor: pointer;
   background-color: #e1d0bc;
   font-family: "Josefin Sans";
+  text-align: center;
 }
 
 header {
@@ -52,6 +53,7 @@ header nav a {
 }
 header nav a.active {
   background: var(--secondary);
+  height: 12px;
 }
 
 /* page content */
@@ -65,7 +67,6 @@ main {
 
 /* faq */
 .login-button {
-  border: 5px solid white;
   margin-right: 60px;
   margin: 20px 0px 20px 20px;
   background: var(--primary);
