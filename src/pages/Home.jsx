@@ -24,6 +24,8 @@ class Home extends React.Component {
       imageTitleArray: '',
       imageAltTextArray: '',
       imageCaptionArray: '',
+      phone: '',
+      email: '',
       campName: '',
       showCamp: false,
       error: null,
@@ -74,6 +76,8 @@ class Home extends React.Component {
         imageAltTextArray: response.data[0].images.map(ele => ele['altText']),
         imageCaptionArray: response.data[0].images.map(ele => ele['caption']),
         images: response.data[0].images,
+        phone: response.data[0].phone,
+        email: response.data[0].email,
         error: null,
       })
       // console.log('response.data: ', response.data));
@@ -108,20 +112,27 @@ class Home extends React.Component {
           <p>{this.state.fullName}</p>
           <p>{this.state.latitude}</p>
           <p>{this.state.longitude}</p>
+          <p>{this.state.phone}</p>
+          <p>{this.state.email}</p>
           <Container fluid>
 
             {this.state.imageUrlArray && this.state.imageUrlArray.length > 0 && (
 
               <Carousel fade>
 
-                {this.state.imageUrlArray.map((imageUrl, index) => (
+                {this.state.images.map((obj, index) => (
                   <Carousel.Item key={index}>
                     <img
-                      src={imageUrl}
+                      src={obj.url}
+                      alt={obj.altText}
                       // className="d-block w-100"
                       // width={1200}
                       height={500}
                     />
+                    <p></p>
+                    <p></p>
+                    <p>{obj.caption}</p>
+                    <p>{obj.title}, by {obj.credit}</p>
                   </Carousel.Item>
                 ))}
               </Carousel>
