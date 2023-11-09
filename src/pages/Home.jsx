@@ -5,6 +5,7 @@ import axios from "axios";
 import { Form, Button } from 'react-bootstrap';
 // import Camp from '../components/Camp';
 import { Container, Carousel } from "react-bootstrap"
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 let VITE_APP_SERVER = import.meta.env.VITE_APP_SERVER;
 
@@ -113,7 +114,7 @@ class Home extends React.Component {
 
           <Container fluid>
             <Carousel fade>
-              {this.state.imageUrlArray.map((imageUrl, index = 0) => (
+              {this.state.imageUrlArray.map((imageUrl, index) => (
                 <Carousel.Item key={index}>
                   <img
                     src={imageUrl}
