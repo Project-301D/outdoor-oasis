@@ -1,15 +1,11 @@
 import React from "react";
-//import Component?
 import Footer from "./Footer";
 import axios from "axios";
 import { Form, Button } from 'react-bootstrap';
-// import Camp from '../components/Camp';
 import { Container, Carousel } from "react-bootstrap"
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 let VITE_APP_SERVER = import.meta.env.VITE_APP_SERVER;
-
-console.log('VITE_APP_SERVER: ', VITE_APP_SERVER)
 
 class Home extends React.Component {
   constructor(props) {
@@ -39,33 +35,12 @@ class Home extends React.Component {
     });
   };
 
-  // displayCamp = async (parkCode, description, name) => {
-  //   try {
-  //     const response = await axios.get(`${VITE_APP_SERVER}/campground`, {
-  //       params: { parkCode: parkCode, description: description, name: name }
-  //     });
-  //     console.log('response from front end: ', response);
-  //     const campData = response.data;
-  //     this.setState({
-  //       latitude: campData[0].latitude,
-  //       longitude: campData[0].longitude,
-  //       fullName: campData[0].fullName,
-  //       images: campData[0].images,
-  //       showCamp: true,
-  //     });
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };;
-
   handleSubmit = async (event) => {
     event.preventDefault();
     try {
       const response = await axios.get(`${VITE_APP_SERVER}/campground`, {
         params: { name: this.state.campName }
       });
-      // console.log('response.data[0].images: ', response.data[0].images)
-      // console.log('imgUrlArray: ', imageUrlArray);
       this.setState({
         latitude: response.data[0].latitude,
         longitude: response.data[0].longitude,
@@ -80,8 +55,6 @@ class Home extends React.Component {
         email: response.data[0].email,
         error: null,
       })
-      // console.log('response.data: ', response.data));
-      console.log('images: ', this.state.images);
     } catch (error) {
       console.error(error);
       this.setState({
@@ -93,7 +66,7 @@ class Home extends React.Component {
 
 
   render() {
-    const campsiteNames = ["Yellowstone", "Great Smoky Mountain", "Grand Teton", "Grand Canyon"];
+    const campsiteNames = ["Yellowstone", "Smoky Mountain", "Grand Teton", "Grand Canyon"];
     return (
       <>
         <div>
