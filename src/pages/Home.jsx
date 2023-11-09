@@ -93,58 +93,58 @@ class Home extends React.Component {
 
 
   render() {
-    const campsiteNames = ["Yellowstone", "Great Smoky", "Grand Teton", "Grand Canyon"];
+    const campsiteNames = ["Yellowstone", "Great Smoky Mountain", "Grand Teton", "Grand Canyon"];
     return (
       <>
-        <p>Find a National Park!</p>
-        <Form onSubmit={this.handleSubmit}>
-          <Form.Label>Enter campsite name:</Form.Label>
-          <Form.Control
-            type="text"
-            value={this.state.campName}
-            onChange={this.handleCampInput}
-            onInput={this.handleInput}
-            onSubmit={this.handleSubmit}
-            list="campsiteNames"
-          />
-          <datalist id="campsiteNames">
-            {campsiteNames.map((name, index) => (
-              <option key={index} value={name} />
-            ))}
-          </datalist>
-          <Button type="submit" className="btn btn-primary">Search!</Button>
-        </Form>
-
         <div>
-          <p>{this.state.fullName}</p>
-          <p>{this.state.latitude}</p>
-          <p>{this.state.longitude}</p>
-          <p>{this.state.phone}</p>
-          <p>{this.state.email}</p>
-          <Container fluid>
+          <p>Find a National Park!</p>
+          <Form onSubmit={this.handleSubmit}>
+            <Form.Label>Enter campsite name:</Form.Label>
+            <Form.Control
+              type="text"
+              value={this.state.campName}
+              onChange={this.handleCampInput}
+              onInput={this.handleInput}
+              onSubmit={this.handleSubmit}
+              list="campsiteNames"
+            />
+            <datalist id="campsiteNames">
+              {campsiteNames.map((name, index) => (
+                <option key={index} value={name} />
+              ))}
+            </datalist>
+            <Button type="submit" className="btn btn-primary">Search!</Button>
+          </Form>
 
-            {this.state.imageUrlArray && this.state.imageUrlArray.length > 0 && (
+          {this.state.imageUrlArray && this.state.imageUrlArray.length > 0 && (
+            <div>
+              <p>Park Name: {this.state.fullName}</p>
+              <p>Latitude: {this.state.latitude}</p>
+              <p>Longitude: {this.state.longitude}</p>
+              <p>Phone: {this.state.phone}</p>
+              <p>Email: {this.state.email}</p>
 
-              <Carousel fade>
-
-                {this.state.images.map((obj, index) => (
-                  <Carousel.Item key={index}>
-                    <img
-                      src={obj.url}
-                      alt={obj.altText}
-                      // className="d-block w-100"
-                      width={1200}
-                      height={500}
-                    />
-                    <p></p>
-                    <p></p>
-                    <p>{obj.caption}</p>
-                    <p>{obj.title}, by {obj.credit}</p>
-                  </Carousel.Item>
-                ))}
-              </Carousel>
-            )}
-          </Container>
+              <Container fluid>
+                <Carousel fade indicators={false}>
+                  {this.state.images.map((obj, index) => (
+                    <Carousel.Item key={index}>
+                      <img
+                        src={obj.url}
+                        alt={obj.altText}
+                        // className="d-block w-100"
+                        width={1000}
+                      // height={500}
+                      />
+                      <p></p>
+                      <p></p>
+                      <p>{obj.caption}</p>
+                      <p>{obj.title}, by {obj.credit}</p>
+                    </Carousel.Item>
+                  ))}
+                </Carousel>
+              </Container>
+            </div>
+          )}
         </div>
         <Footer />
       </>
