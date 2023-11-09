@@ -53,7 +53,7 @@ Version 0.0
 Made by Emma Johnson-Barth, Luke McCarthy, and Ava Melchior.
 Help from Craig Barkley and Daniel Frey
 
-## User Stories 
+## User Stories
 
 As an adventurous traveler, I want to be surprised by a random campsite suggestion, so I can experience the thrill of discovering new and unique camping locations I wouldn't have found otherwise.
 

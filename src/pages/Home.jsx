@@ -89,6 +89,7 @@ class Home extends React.Component {
 
 
   render() {
+    const campsiteNames = ["Yellowstone", "Great Smoky", "Grand Teton", "Grand Canyon"];
     return (
       <>
         <p>Find a National Park!</p>
@@ -100,7 +101,13 @@ class Home extends React.Component {
             onChange={this.handleCampInput}
             onInput={this.handleInput}
             onSubmit={this.handleSubmit}
+            list="campsiteNames"
           />
+          <datalist id="campsiteNames">
+            {campsiteNames.map((name, index) => (
+              <option key={index} value={name} />
+            ))}
+          </datalist>
           <Button type="submit" className="btn btn-primary">Search!</Button>
         </Form>
 
@@ -119,7 +126,7 @@ class Home extends React.Component {
                     <img
                       src={imageUrl}
                       // className="d-block w-100"
-                      // width={1200}
+                      width={1200}
                       height={500}
                     />
                   </Carousel.Item>
