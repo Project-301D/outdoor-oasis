@@ -8,7 +8,7 @@ class NavLayout extends React.Component {
       <section>
         <header>
           <nav>
-            <h1>React Router</h1>
+            <h1>Outdoor Oasis</h1>
             {this.props.auth0.isAuthenticated ? (
               <>
                 <NavLink to="profile">Profile</NavLink>

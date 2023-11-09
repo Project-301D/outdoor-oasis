@@ -93,7 +93,7 @@ class Home extends React.Component {
 
     return (
       <>
-        <h1>Outdoor Oasis</h1>
+        {/* <h1>Outdoor Oasis</h1> */}
         <p>Find a National Park!</p>
         <Form onSubmit={this.handleSubmit}>
           <Form.Label>Enter campsite name:</Form.Label>
@@ -119,8 +119,8 @@ class Home extends React.Component {
                   <img
                     src={imageUrl}
                     // className="d-block w-100"
-                  width={1200}
-                  // height={500}
+                  // width={1200}
+                  height={500}
                   />
                 </Carousel.Item>
               ))}
