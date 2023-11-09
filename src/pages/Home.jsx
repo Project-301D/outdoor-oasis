@@ -5,6 +5,8 @@ import axios from "axios";
 import { Form, Button } from 'react-bootstrap';
 // import Camp from '../components/Camp';
 import { Container, Carousel } from "react-bootstrap"
+// import { CarouselComponent } from "@syncfusion/ej2-react-navigations";
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 let VITE_APP_SERVER = import.meta.env.VITE_APP_SERVER;
@@ -109,35 +111,36 @@ class Home extends React.Component {
         </Form>
 
         <div>
-          <p>{this.state.fullName}</p>
-          <p>{this.state.latitude}</p>
-          <p>{this.state.longitude}</p>
-          <p>{this.state.phone}</p>
-          <p>{this.state.email}</p>
-          <Container fluid>
-
-            {this.state.imageUrlArray && this.state.imageUrlArray.length > 0 && (
-
-              <Carousel fade>
-
-                {this.state.images.map((obj, index) => (
-                  <Carousel.Item key={index}>
-                    <img
-                      src={obj.url}
-                      alt={obj.altText}
-                      // className="d-block w-100"
-                      // width={1200}
-                      height={500}
-                    />
-                    <p></p>
-                    <p></p>
-                    <p>{obj.caption}</p>
-                    <p>{obj.title}, by {obj.credit}</p>
-                  </Carousel.Item>
-                ))}
-              </Carousel>
-            )}
-          </Container>
+          {this.state.imageUrlArray && this.state.imageUrlArray.length > 0 && (
+            <>
+              <p>Park Name: {this.state.fullName}</p>
+              <p>Latitude: {this.state.latitude}</p>
+              <p>Longitude: {this.state.longitude}</p>
+              <p>Phone: {this.state.phone}</p>
+              <p>Email: {this.state.email}</p>
+              <Container fluid>
+                <Carousel indicators={false}>
+                  {/* <CarouselComponent showIndicators={false}> */}
+                    {this.state.images.map((obj, index) => (
+                      <Carousel.Item key={index}>
+                        <img
+                          src={obj.url}
+                          alt={obj.altText}
+                          // className="d-block w-100"
+                          // width={1200}
+                          height={500}
+                        />
+                        <p></p>
+                        <p></p>
+                        <p>{obj.caption}</p>
+                        <p>{obj.title}, by {obj.credit}</p>
+                      </Carousel.Item>
+                    ))}
+                  {/* </CarouselComponent> */}
+                </Carousel>
+              </Container>
+            </>
+          )}
         </div>
         <Footer />
       </>
