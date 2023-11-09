@@ -44,6 +44,7 @@ class Home extends React.Component {
       this.setState({
         latitude: response.data[0].latitude,
         longitude: response.data[0].longitude,
+        states: response.data[0].states,
         fullName: response.data[0].fullName,
         imageUrlArray: response.data[0].images.map(ele => ele['url']),
         imageCreditArray: response.data[0].images.map(ele => ele['credit']),
@@ -92,6 +93,7 @@ class Home extends React.Component {
           {this.state.imageUrlArray && this.state.imageUrlArray.length > 0 && (
             <div>
               <p>Park Name: {this.state.fullName}</p>
+              <p>States: {this.state.states}</p>
               <p>Latitude: {this.state.latitude}</p>
               <p>Longitude: {this.state.longitude}</p>
               <p>Phone: {this.state.phone}</p>
