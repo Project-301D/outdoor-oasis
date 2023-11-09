@@ -114,14 +114,19 @@ class Home extends React.Component {
 
               <Carousel fade>
 
-                {this.state.imageUrlArray.map((imageUrl, index) => (
+                {this.state.images.map((obj, index) => (
                   <Carousel.Item key={index}>
                     <img
-                      src={imageUrl}
+                      src={obj.url}
+                      alt={obj.altText}
                       // className="d-block w-100"
                       // width={1200}
                       height={500}
                     />
+                    <p>  </p>
+                    <p>  </p>
+                    <p>{obj.caption}</p>
+                    <p>{obj.title}, by {obj.credit}</p>
                   </Carousel.Item>
                 ))}
               </Carousel>
