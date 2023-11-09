@@ -73,11 +73,11 @@ class Home extends React.Component {
         imageTitleArray: response.data[0].images.map(ele => ele['title']),
         imageAltTextArray: response.data[0].images.map(ele => ele['altText']),
         imageCaptionArray: response.data[0].images.map(ele => ele['caption']),
-        // images: response.data[0].images,
+        images: response.data[0].images,
         error: null,
       })
       // console.log('response.data: ', response.data));
-      // console.log('imageUrlArray: ', this.state.imageUrlArray);
+      console.log('images: ', this.state.images);
     } catch (error) {
       console.error(error);
       this.setState({
@@ -88,12 +88,9 @@ class Home extends React.Component {
   };
 
 
-
   render() {
-
     return (
       <>
-        {/* <h1>Outdoor Oasis</h1> */}
         <p>Find a National Park!</p>
         <Form onSubmit={this.handleSubmit}>
           <Form.Label>Enter campsite name:</Form.Label>
@@ -111,25 +108,27 @@ class Home extends React.Component {
           <p>{this.state.fullName}</p>
           <p>{this.state.latitude}</p>
           <p>{this.state.longitude}</p>
-
           <Container fluid>
-            <Carousel fade>
-              {this.state.imageUrlArray.map((imageUrl, index) => (
-                <Carousel.Item key={index}>
-                  <img
-                    src={imageUrl}
-                    // className="d-block w-100"
-                  // width={1200}
-                  height={500}
-                  />
-                </Carousel.Item>
-              ))}
-            </Carousel>
+
+            {this.state.imageUrlArray && this.state.imageUrlArray.length > 0 && (
+
+              <Carousel fade>
+
+                {this.state.imageUrlArray.map((imageUrl, index) => (
+                  <Carousel.Item key={index}>
+                    <img
+                      src={imageUrl}
+                      // className="d-block w-100"
+                      // width={1200}
+                      height={500}
+                    />
+                  </Carousel.Item>
+                ))}
+              </Carousel>
+            )}
           </Container>
         </div>
-
         <Footer />
-
       </>
     );
   }
