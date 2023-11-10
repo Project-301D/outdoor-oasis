@@ -1,5 +1,5 @@
 import React from "react";
-// import luke from '../../'
+import luke from '../../img/Luke.jpg'
 
 class AboutUs extends React.Component {
   render() {
@@ -12,7 +12,7 @@ class AboutUs extends React.Component {
 
 
         <p>Hey everyone! My name is Luke, I am 20 years old and do not have any previous experience besides Code 101 and 102. I am excited for this class because coding is very enjoyable for me and feels more like a hobby rather than a chore. Im also excited to work towards expanding my knowledge in coding and for it to hopefully help me towards my future career.</p>
-        <img src="../../img/Luke.jpg" alt="Luke Picture"/>
+        <img src={luke} alt="Luke Picture"/>
 
 
         <p>Hello! My name is Ava, Im from Cedar Rapids, IA, born and raised. Im 19 years old and I have a background in music, with a little bit of programming experience in robotics. I use Windows 11, but
